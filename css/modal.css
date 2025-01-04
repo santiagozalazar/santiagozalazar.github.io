@@ -1,0 +1,173 @@
+@import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Red+Hat+Display:wght@400;700;900&display=swap");
+
+:root {
+    --header-height: 3.5rem;
+    
+    /*========== Colors ==========*/
+    /*Color mode HSL(hue, saturation, lightness)*/
+    --first-color: hsl(327, 100%, 55%);
+    --first-color-light: hsl(327, 99%, 77%);
+    --first-color-alt: hsl(327, 67%, 52%);
+    --first-color-dark: hsl(327, 63%, 50%);
+    --first-color-gray: hsl(79, 6%, 64%);
+    --title-color: hsl(180, 4%, 98%);
+    --title-color-black: hsl(180, 4%, 12%);
+    --text-color: hsl(180, 4%, 72%);
+    --text-color-light: hsl(180, 4%, 65%);
+    --body-color: hsl(180, 12%, 8%);
+  
+    /*========== Font and typography ==========*/
+    /*.5rem = 8px | 1rem = 16px ...*/
+    --body-font: 'Red Hat Display', sans-serif;
+    --second-font: 'Kaushan Script', cursive;
+    --biggest-font-size: 2rem;
+    --bigger-font-size: 1.5rem;
+    --big-font-size: 1.25rem;
+    --h1-font-size: 1.5rem;
+    --h2-font-size: 1.25rem;
+    --h3-font-size: 1rem;
+    --normal-font-size: .938rem;
+    --small-font-size: .813rem;
+    --smaller-font-size: .75rem;
+  
+    /*========== Font weight ==========*/
+    --font-bold: 700;
+    --font-black: 900;
+  
+    /*========== z index ==========*/
+    --z-tooltip: 10;
+    --z-fixed: 100;
+  }
+
+@media screen and (min-width: 1024px) {
+    :root {
+      --biggest-font-size: 6rem;
+      --bigger-font-size: 3.5rem;
+      --big-font-size: 2.75rem;
+      --h1-font-size: 2.25rem;
+      --h2-font-size: 1.5rem;
+      --h3-font-size: 1.25rem;
+      --normal-font-size: 1rem;
+      --small-font-size: .875rem;
+      --smaller-font-size: .813rem;
+    }
+  }
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+
+
+  body,
+  button,
+  input {
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+  }
+  
+  body {
+    background-color: var(--body-color);
+    color: var(--text-color);
+  }
+  
+  h1, h2, h3 {
+    color: var(--title-color);
+    font-weight: var(--font-bold);
+  }
+  
+  ul {
+    list-style: none;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+.modal{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--first-color-gray);
+    display: flex;
+}
+
+.modal__container{
+    margin: auto;
+    background-color: var(--body-color);
+    width: 90%;
+    max-width: 600px;
+    max-height: 90%;
+    overflow: hidden;
+    text-align: center;
+    padding: 2.5em 1.5em;
+    border-radius: 1em;
+
+    
+}
+
+.modal__container{
+    animation: show 1s;
+}
+
+
+@keyframes show{
+    0%{
+        transform: translateY(-150vh);
+    }
+}
+
+.modal__picture{
+    width: 90%;
+    margin: 0 auto;
+    max-width: 400px;
+    margin-bottom: 2em;
+}
+
+.modal__img{
+    width: 100%;
+    display: block;
+}
+
+
+
+
+
+
+
+
+.modal__lang {
+    display: inline-block;
+    margin-top: 25px;
+    
+    cursor: pointer;
+    width: 38px;
+    height: 38px;
+    background-image: url(https://flagsapi.com/AR/flat/64.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+  
+.modal__lang-1  {
+    display: inline-block; 
+    margin-top: 25px;
+    margin-left: 25px;
+    cursor: pointer;
+    width: 38px;
+    height: 38px;
+    background-image: url(https://flagsapi.com/BR/flat/64.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}

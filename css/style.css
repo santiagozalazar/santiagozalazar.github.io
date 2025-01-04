@@ -1,0 +1,338 @@
+@import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Red+Hat+Display:wght@400;700;900&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  --header-height: 3.5rem;
+  
+  /*========== Colors ==========*/
+  /*Color mode HSL(hue, saturation, lightness)*/
+  --first-color: hsl(54, 100%, 50%);
+  --first-color-light: hsl(327, 99%, 77%);
+  --first-color-alt: hsl(327, 67%, 52%);
+  --first-color-dark: hsl(327, 63%, 50%);
+  --first-color-gray: hsl(79, 6%, 64%);
+  --title-color: hsl(180, 4%, 98%);
+  --title-color-black: hsl(180, 4%, 12%);
+  --text-color: hsl(180, 4%, 72%);
+  --text-color-light: hsl(180, 4%, 65%);
+  --body-color: hsl(180, 12%, 8%);
+
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --body-font: 'Red Hat Display', sans-serif;
+  --second-font: 'Kaushan Script', cursive;
+  --biggest-font-size: 2rem;
+  --bigger-font-size: 1.5rem;
+  --big-font-size: 1.25rem;
+  --h1-font-size: 1.5rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1rem;
+  --normal-font-size: .938rem;
+  --small-font-size: .813rem;
+  --smaller-font-size: .75rem;
+
+  /*========== Font weight ==========*/
+  --font-bold: 700;
+  --font-black: 900;
+
+  /*========== z index ==========*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+
+/* Responsive typography */
+@media screen and (min-width: 1024px) {
+  :root {
+    --biggest-font-size: 6rem;
+    --bigger-font-size: 3.5rem;
+    --big-font-size: 2.75rem;
+    --h1-font-size: 2.25rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: .875rem;
+    --smaller-font-size: .813rem;
+  }
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body,
+button,
+input {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+}
+
+body {
+  background-color: var(--body-color);
+  color: var(--text-color);
+}
+
+
+
+
+
+
+section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+section::before{
+    
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+}
+
+.contai{
+    position: relative;
+    margin-top: 55px;
+    min-width: 1100px;
+    min-height: 550px;
+    display: flex;
+}
+
+.contai .contactInfo{
+    position: absolute;
+    top: 40px;
+    width: 350px;
+    height: calc(100% - 80px);
+    background: #474B4E;
+    z-index: 1;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 20px 25px rgba(0, 0, 0, 0.15);
+}
+
+.contai .contactInfo h2{
+  color: var(--text-color);
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.contai .contactInfo ul.info{
+  position: relative;
+  margin: 20px 0;
+}
+
+.contai .contactInfo ul.info li{
+  position: relative;
+  list-style: none;
+  display: flex;
+  margin: 20px 0;
+  cursor: pointer;
+  align-items: flex-start;
+}
+
+.contai .contactInfo ul.info li span:nth-child(1){
+  width: 25px;
+  min-width: 25px;
+}
+
+.contai .contactInfo ul.info li span:nth-child(1) img{
+  max-width: 100%;
+}
+
+.contai .contactInfo ul.info li span:nth-child(2){
+  margin-left: 10px;
+  font-weight: 300;
+}
+
+
+.contai .contactInfo ul.sci{
+  position: relative;
+  display: flex;
+}
+
+.contai .contactInfo ul.sci li{
+  width: 25px;
+  list-style: none;
+  margin-right: 15px;
+}
+
+.contai .contactInfo ul.sci li a{
+  text-decoration: none;
+}
+
+.contai .contactInfo ul.sci li a img{
+  filter: invert(1);
+}
+
+.contai .contactForm{
+    position: absolute;
+    padding: 70px 50px;
+    padding-left: 250px;
+    margin-left: 150px;
+    width: calc(100% - 150px);
+    height: 100%;
+    background: #fff;
+    box-shadow: 0 50px 50px rgba(0, 0, 0, 0.25);
+}
+
+.contai .contactForm h2{
+  color: var(--title-color-black);
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.contai .contactForm .formBox{
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-top: 30px;
+}
+
+.contai .contactForm .formBox .inputBox{
+  position: relative;
+  margin-bottom: 35px;
+}
+
+.contai .contactForm .formBox .inputBox.w50{
+  width: 47%;
+}
+
+.contai .contactForm .formBox .inputBox.w100{
+  width: 100%;
+}
+
+.contai .contactForm .formBox .inputBox input,
+.contai .contactForm .formBox .inputBox textarea{
+  width: 100%;
+  resize: none;
+  padding: 5px 0;
+  font-size: 18px;
+  font-weight: 300;
+  color: #333;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #777;
+}
+
+.contai .contactForm .formBox .inputBox textarea{
+  height: 120px;
+}
+
+.contai .contactForm .formBox .inputBox span{
+  position: absolute;
+  left: 0;
+  padding: 5px 0;
+  pointer-events: none;
+  font-size: 18px;
+  font-weight: 300;
+  transition: 0.3s;
+}
+
+.contai .contactForm .formBox .inputBox input:focus ~ span,
+.contai .contactForm .formBox .inputBox input:valid ~ span,
+.contai .contactForm .formBox .inputBox textarea:focus ~ span,
+.contai .contactForm .formBox .inputBox textarea:valid ~ span{
+  transform: translateY(-21px);
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  color: var(--first-color);
+  font-weight: 500;
+}
+
+.contai .contactForm .formBox .inputBox input[type="submit"]{
+  position: relative;
+  cursor: pointer;
+  background: var(--first-color);
+  color: #fff;
+  border: none;
+  max-width: 150px;
+  padding: 12px;
+}
+
+.contai .contactForm .formBox .inputBox input[type="submit"]:hover{
+  background: var(--first-color-dark);
+}
+
+
+@media screen and (max-width: 1200px){
+  .contai{
+    width: 90%;
+    min-width: auto;
+    margin: 20px;
+   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+  }
+  .contai .contactInfo{
+    top: 0;
+    height: 550px;
+    position: relative;
+    box-shadow: none;
+  }
+  .contai .contactForm{
+    position: relative;
+    width: calc(100% - 350px);
+    padding-left: 0;
+    margin-left: 0;
+    padding: 40px;
+    height: 550px;
+  }
+  
+}
+
+@media screen and (max-width: 991px){
+  section::before{
+    display: none;
+  }
+  .contai{
+    display: flex;
+    margin-top: 68px;
+    flex-direction: column-reverse;
+  }
+  .contai .contactForm .formBox .inputBox span{
+    font-size: 17px;
+  }
+  .contai .contactForm{
+    width: 100%;
+    height: auto;
+  }
+  .contai .contactInfo{
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+  }
+  .contai .contactInfo ul.sci{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 660px){
+  .contai .contactForm{
+    padding: 25px;
+  }
+  .contai .contactInfo{
+    padding: 25px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .contai .contactInfo ul.sci{
+    margin-top: 10px;
+  }
+  .contai .contactForm .formBox .inputBox.inputBox.w50{
+    width: 100%;
+  }
+}
